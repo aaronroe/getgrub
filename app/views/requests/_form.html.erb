@@ -1,0 +1,37 @@
+<%= form_for(@request) do |f| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% @request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form_for @request do |f| %>
+      <%= f.label "What do you want delivered?" %>
+      <%= f.text_field :item %><br />
+
+      <%= f.label "Where do you want it from?" %>
+      <%= f.text_field :target %><br />
+
+      <%= f.label "Where do you want it delivered?" %>
+      <%= f.text_field :location %><br />
+
+      <%= f.label "How much are you willing to tip?" %>
+      <%= f.text_field :fee %><br />
+
+      <%= f.label "When is the latest you're willing to receive your delivery?" %>
+      <%= f.text_field :time_max %><br />
+
+      <%= f.label "When is the latest you're willing to receive your delivery?" %>
+      <%= f.text_field :time_min %><br />
+
+      <%= f.submit %>
+    <% end %>
+  </div>
+<% end %>

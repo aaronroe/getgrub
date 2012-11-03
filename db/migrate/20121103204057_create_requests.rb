@@ -6,7 +6,12 @@ class CreateRequests < ActiveRecord::Migration
       t.datetime :time_min
       t.datetime :time_max
       t.integer :fee
+      t.string :item
       t.boolean :isOpen
+
+      # requests can either belong to its owner, or to both a job and its owner
+      t.integer :user_id
+      t.integer :job_id
 
       t.timestamps
     end

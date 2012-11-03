@@ -1,4 +1,6 @@
 GetGrub::Application.routes.draw do
+
+  resources :requests
   
   get "users/new"
 
