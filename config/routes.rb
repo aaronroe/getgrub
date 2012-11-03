@@ -4,6 +4,8 @@ GetGrub::Application.routes.draw do
   
   get "users/new"
 
+  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+
   devise_for :users
 
   root :to => "content#index"
