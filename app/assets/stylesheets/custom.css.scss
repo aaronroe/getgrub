@@ -8,6 +8,7 @@ html {
 
 body {
   padding-top: 60px;
+  background-image:url('straws.png');
 }
 
 section {
@@ -39,13 +40,17 @@ h1 {
   text-align: center;
 }
 
+
 h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: #999;
+}
+
+a:hover{
+  text-decoration:none;
 }
 
 p {
@@ -70,4 +75,17 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.alert{
+  display:none;
+}
+
+/*
+ Devise Pages
+*/
+
+.registration{
+  width:20%;
+  margin:auto;
 }
