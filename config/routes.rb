@@ -1,5 +1,7 @@
 GetGrub::Application.routes.draw do
   
+  get "users/new"
+
   devise_for :users
 
   root :to => "public#index"
