@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  location: MyString
+  target: MyString
+  time_min: 2012-11-03 15:40:58
+  time_max: 2012-11-03 15:40:58
+  fee: 1
+  isOpen: false
+
+two:
+  location: MyString
+  target: MyString
+  time_min: 2012-11-03 15:40:58
+  time_max: 2012-11-03 15:40:58
+  fee: 1
+  isOpen: false

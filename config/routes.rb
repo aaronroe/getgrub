@@ -1,6 +1,10 @@
 GetGrub::Application.routes.draw do
+
+  resources :requests
   
   get "users/new"
+
+  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
 
   devise_for :users
 
