@@ -1,6 +1,7 @@
 GetGrub::Application.routes.draw do
 
   resources :requests
+  resources :jobs
   
   get "users/new"
 

@@ -1,46 +1,51 @@
-    <style>
-    #sortable1, #sortable2 { list-style-type: none; margin: 0; padding: 0 0 2.5em; float: left; margin-right: 10px; }
-    #sortable1 li, #sortable2 li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; width: 120px; } li.emptyMessage { display:none;}
-    </style>
-    <script>
-    $(function() {
-$('#sortable1, #sortable2')
-    .sortable(
-        {'connectWith':'.connectedSortable',
-         'dropOnEmpty':true,
-         'scroll':true,
-         items: "li:not(.emptyMessage)",
-         receive: function(event, ui) {
-                 //hide empty message on receiver
-                 $('li.emptyMessage', this).hide();
-                 
-                 //show empty message on sender if applicable
-                 if($('li:not(.emptyMessage)', ui.sender).length == 0){
-                     $('li.emptyMessage', ui.sender).show();
-                 } else {
-                     $('li.emptyMessage', ui.sender).hide();
-                 }            
-             }
-         
-        });
-    });
-    </script>
-</head>
-<body>
- 
-<div style="width: 200px; float:left;">
-<ul id="sortable2" class="connectedSortable">
-    <li class="ui-state-highlight">Item 1</li>
-    <li class="emptyMessage">Add jobs!</li>
-</ul>
-</div>
+<div class="row">
+    <div class="span5">
+        <h2>Open Jobs</h2>
 
-<div style="width: 200px; float:left;">
-<ul id="sortable1" class="connectedSortable">
-    <% @requests.each do |request| %>
-      <li class="ui-state-default"><%= request.item %></li>
-    <% end %>
-    <li class="emptyMessage">No more available requests!</li>
-</ul>
+        <table class="table table-striped table-hover alpha">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Deliver By</th>
+            </tr>
+          </thead>
+
+          <tbody id="sortable1" class="connectedSortable">
+            <% @requests.each do |request| %>
+                <%= render :partial => 'shared/per_job', :locals => {:request => request, :show_input => true} %>
+            <% end %>
+            <tr class="emptyMessage"><td colspan="2">No more available requests!</td></tr>
+
+          </tbody>
+        </table>
+
+    </div>
+
+
+    <div class="span5 well well-large jobs">
+        <h2>My Jobs</h2>
+
+        <!-- <form class="well well-large jobs" action="<%=new_job_path%>" method="POST"> -->
+        <%= form_for @job do |f| %>
+            <table class="table table-striped table-hover alpha">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Deliver By</th>
+                </tr>
+              </thead>
+              <tbody id="sortable2" class="connectedSortable">
+
+                <% @jobs.each do |job| %>
+                    <%= render :partial => 'shared/per_job', :locals => {:request => job, :show_input => false} %>
+                <% end %>
+
+                <tr class="emptyMessage"><td colspan="2">Drag and drop jobs here to add</td></tr>
+              </tbody>
+            </table>
+
+            <input type="submit" class="btn btn-primary btn-large" value="Accept Jobs">
+
+        <% end %>
+    </div>
 </div>
-<div class="clear"></div>

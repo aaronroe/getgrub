@@ -1,0 +1,16 @@
+<tr>
+  <td><%= request.item %></td>
+  <td><%= request.time_max %></td>
+	<% if controller_name== 'home' %>
+  <td>
+    <a href="<%=edit_request_path(request)%>" class="btn btn-warning"><i class="icon-pencil icon-white"></i>Edit</a>
+  </td>
+  <td>
+    <%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %>
+	</td>
+	<% end %>
+
+	<% if controller_name == 'job' && show_input %>
+	<input type="hidden" name="accepted_jobs[]" value="<%=request.id%>">
+	<% end %>
+</tr>

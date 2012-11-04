@@ -1,3 +1,42 @@
 // Place all the styles related to the Job controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#sortable1, #sortable2 { 
+	list-style-type: none; 
+	width: 100%;
+}
+#sortable1 li, #sortable2 li {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+  	margin: 0 5px 5px 5px;
+ 	padding: 5px; 
+ 	font-size: 1.2em; 
+ 	width: 100%;
+ 	cursor: pointer
+}
+#sortable1 tr, #sortable2 tr {
+	cursor: pointer;
+}
+
+
+.jobs.well{
+	background: rgba(243, 168, 36, .25);
+}
+
+#sortable1 li.emptyMessage,
+#sortable2 li.emptyMessage, 
+#sortable2 tr.emptyMessage,
+#sortable1 tr.emptyMessage{ 
+	min-height: 200px;
+	width: 100%;
+	cursor: default;
+}
+
+li + li.emptyMessage{
+	display: none;
+}
+
+tr + tr.emptyMessage{
+	display: none;
+}

@@ -2,8 +2,8 @@
 <html>
 	<head>
 	  <title>GetGrub</title>
-	  <%= stylesheet_link_tag    "custom", "scaffolds", :media => "all" %>
-	  <%= javascript_include_tag "application" %>
+	  <%= stylesheet_link_tag    "custom", "scaffolds", "application", controller_name, :media => "all" %>
+	  <%= javascript_include_tag "application", controller_name %>
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -13,6 +13,7 @@
 				<div class="container">
 					<a class="brand" href="<%=home_path%>">Get Grub</a>
 					<ul class="nav pull-right">
+						<li><%=link_to 'Dashboard', home_path %></li>
 						<li><%=link_to 'Profile', profile_path %></li>
 						<li><%=link_to 'Sign Out', users_sign_out_path %></li>
 					</ul>

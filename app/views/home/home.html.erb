@@ -3,15 +3,26 @@
     <%= link_to 'New Job', users_job_path, {:class=>"btn btn-success btn-large"} %>
   </div>
   <div style="float:right;">
-    <table>
-    <% @requests.each do |request| %>
-      <tr>
-        <td><%= request.item %></td>
-        <td><%= link_to 'View', edit_request_path(request), :class =>"btn btn-primary" %></td>
-        <td><%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %></td>
-      </tr>
-    <% end %>
-    </table>
-
     <%= link_to 'New Request', new_request_path, {:class=>"btn btn-success btn-large"} %>
   </div>
+<div class="clear"></div>
+<br/>
+<h2>Your Pending Requests</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Deliver By</th>
+      <th colspan=2>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @requests.each do |request| %>
+
+    <%= render :partial => 'shared/per_job', :locals => {:request => request} %>
+
+  <% end %>
+  </tbody>
+
+</table>
