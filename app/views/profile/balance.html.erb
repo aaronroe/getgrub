@@ -1,0 +1,15 @@
+<div style="font-weight:bold">Current balance:</div>
+
+<%= current_user.balance %>
+
+<br />
+<br />
+
+<%= form_for @request do |f| %>
+
+	<%= f.label "How much do you wish to add to your account?" %>
+	<%= f.text_field :balance %><br />
+
+	<%= f.submit 'Add', :class => "btn btn-primary" %>
+
+<% end %>
