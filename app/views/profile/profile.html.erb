@@ -1,0 +1,19 @@
+<div style="font-weight:bold">Phone Number:</div>
+
+<%= current_user.phone_number %>
+
+<a>Edit</a>
+
+<br />
+<br />
+
+<div style="font-weight:bold">Balance:</div>
+
+<%= current_user.balance %>
+
+<a>Add</a>
+
+<br />
+<br />
+
+<%= link_to 'Back', home_path, :class => "btn btn-primary" %>
