@@ -1,4 +1,7 @@
 class RequestsController < ApplicationController
+
+  layout "internals"
+
   # GET /requests/1
   # GET /requests/1.json
   def show

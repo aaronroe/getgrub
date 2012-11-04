@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   background-image:url('/assets/straws.png');
   font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
   font-size: 13px;
@@ -24,6 +25,15 @@ a.btn:visited{
 
 a:hover{
 	text-decoration: none;
+}
+
+#content_wrapper{
+	box-sizing: border-box;
+	margin: 40px auto;
+	width: 60%;
+
+	padding: 20px;
+
 }
 
 .buttons{
