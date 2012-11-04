@@ -1,1 +1,46 @@
-<h1>New Job</h1>
+    <style>
+    #sortable1, #sortable2 { list-style-type: none; margin: 0; padding: 0 0 2.5em; float: left; margin-right: 10px; }
+    #sortable1 li, #sortable2 li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; width: 120px; } li.emptyMessage { display:none;}
+    </style>
+    <script>
+    $(function() {
+$('#sortable1, #sortable2')
+    .sortable(
+        {'connectWith':'.connectedSortable',
+         'dropOnEmpty':true,
+         'scroll':true,
+         items: "li:not(.emptyMessage)",
+         receive: function(event, ui) {
+                 //hide empty message on receiver
+                 $('li.emptyMessage', this).hide();
+                 
+                 //show empty message on sender if applicable
+                 if($('li:not(.emptyMessage)', ui.sender).length == 0){
+                     $('li.emptyMessage', ui.sender).show();
+                 } else {
+                     $('li.emptyMessage', ui.sender).hide();
+                 }            
+             }
+         
+        });
+    });
+    </script>
+</head>
+<body>
+ 
+<div style="width: 200px; float:left;">
+<ul id="sortable2" class="connectedSortable">
+    <li class="ui-state-highlight">Item 1</li>
+    <li class="emptyMessage">Add jobs!</li>
+</ul>
+</div>
+
+<div style="width: 200px; float:left;">
+<ul id="sortable1" class="connectedSortable">
+    <% @requests.each do |request| %>
+      <li class="ui-state-default"><%= request.item %></li>
+    <% end %>
+    <li class="emptyMessage">No more available requests!</li>
+</ul>
+</div>
+<div class="clear"></div>
