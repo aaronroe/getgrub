@@ -4,6 +4,15 @@
     <title>GetGrub</title>
   </head>
   <body>
+  <table>
+  <% @requests.each do |request| %>
+    <tr>
+      <td><%= request.item %></td>
+      <td><%= link_to 'View', edit_request_path(request), :class =>"btn btn-primary" %></td>
+      <td><%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %></td>
+    </tr>
+  <% end %>
+  </table>
 
   <%= link_to 'New Request', new_request_path, {:class=>"btn btn-success"} %>
   <%= link_to 'Sign Out', users_sign_out_path, {:class=>"btn btn-danger"} %>

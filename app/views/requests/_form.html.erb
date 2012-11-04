@@ -25,13 +25,13 @@
       <%= f.label "How much are you willing to tip?" %>
       <%= f.text_field :fee %><br />
 
+      <%= f.label "When is the earliest you're willing to receive your delivery?" %>
+      <%= f.text_field :time_min %><br />
+
       <%= f.label "When is the latest you're willing to receive your delivery?" %>
       <%= f.text_field :time_max %><br />
 
-      <%= f.label "When is the latest you're willing to receive your delivery?" %>
-      <%= f.text_field :time_min %><br />
-
-      <%= f.submit :class => "btn btn-primary" %>
+      <%= f.submit submit_name, :class => "btn btn-primary" %>
     <% end %>
   </div>
 <% end %>

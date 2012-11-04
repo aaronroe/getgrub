@@ -1,15 +1,4 @@
 class RequestsController < ApplicationController
-  # GET /requests
-  # GET /requests.json
-  def index
-    @requests = Request.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @requests }
-    end
-  end
-
   # GET /requests/1
   # GET /requests/1.json
   def show
@@ -41,11 +30,13 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(params[:request])
+    @request.user_id = current_user.id
+    @request.isOpen = true
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
-        format.json { render json: @request, status: :created, location: @request }
+        format.html { redirect_to home_path, notice: 'Request was successfully created.' }
+        format.json { render json: @request, status: :created, location: home_path }
       else
         format.html { render action: "new" }
         format.json { render json: @request.errors, status: :unprocessable_entity }
@@ -60,7 +51,7 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.update_attributes(params[:request])
-        format.html { redirect_to @request, notice: 'Request was successfully updated.' }
+        format.html { redirect_to home_path, notice: 'Request was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +67,7 @@ class RequestsController < ApplicationController
     @request.destroy
 
     respond_to do |format|
-      format.html { redirect_to requests_url }
+      format.html { redirect_to home_path }
       format.json { head :no_content }
     end
   end

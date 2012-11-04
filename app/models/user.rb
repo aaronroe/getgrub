@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   validates :phone_number, :presence => true
 
-  has_many :request
-  has_many :job
+  has_many :requests
+  has_many :jobs
 
 end

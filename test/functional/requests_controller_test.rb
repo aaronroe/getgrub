@@ -44,6 +44,6 @@ class RequestsControllerTest < ActionController::TestCase
       delete :destroy, id: @request
     end
 
-    assert_redirected_to requests_path
+    assert_redirected_to home_path
   end
 end

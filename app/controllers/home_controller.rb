@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
-	def home
-
-
+	
+  def home
+    @requests = Request.where(:user_id => current_user.id).all
 	end
 
 end
