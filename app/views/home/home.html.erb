@@ -5,6 +5,7 @@
   <div style="float:right;">
     <table>
     <% @requests.each do |request| %>
+      <div style="font-weight:bold;">My Current Requests</div>
       <tr>
         <td><%= request.item %></td>
         <td><%= link_to 'View', edit_request_path(request), :class =>"btn btn-primary" %></td>
