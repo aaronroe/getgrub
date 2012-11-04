@@ -12,6 +12,7 @@ GetGrub::Application.routes.draw do
 
   match "/home" => "home#home"
   match "/users/job" => "job#job"
+  match "/profile" => "profile#profile"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
