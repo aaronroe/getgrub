@@ -11,6 +11,7 @@ GetGrub::Application.routes.draw do
   root :to => "content#index"
 
   match "/home" => "home#home"
+  match "/users/job" => "job#job"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
