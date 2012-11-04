@@ -1,17 +1,7 @@
 class RequestsController < ApplicationController
 
   layout "internals"
-
-  # GET /requests/1
-  # GET /requests/1.json
-  def show
-    @request = Request.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @request }
-    end
-  end
+  before_filter :require_login
 
   # GET /requests/new
   # GET /requests/new.json
