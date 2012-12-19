@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row-fluid">
     <div class="span8 hero-unit">
-        <h1 style="margin-bottom: 1em">Got hunger?</h1>
+        <h1 style="margin-bottom: 1.6em">Got hunger?</h1>
         <div class="row">
             <div class="span4 offset2">
                 <%=image_tag("getgrub.png")%>
@@ -8,10 +8,8 @@
         </div>
     </div>
     <div class="span4 well well-large">
-
         <h1>Sign Up</h1>
         <p>Already have an account? <%= link_to 'Sign in here.', user_session_path, {:id=>'sign_in_trigger'} %></p>
         <%=render :partial => 'shared/signup_form'%>
     </div>
 </div>
-
