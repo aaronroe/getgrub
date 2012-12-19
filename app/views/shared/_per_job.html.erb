@@ -1,13 +1,12 @@
 <tr>
   <td><%= request.item %></td>
+  <td><%= request.fee %></td>
   <td><%= request.time_max %></td>
 	<% if controller_name== 'home' %>
   <td>
     <a href="<%=edit_request_path(request)%>" class="btn btn-warning"><i class="icon-pencil icon-white"></i>Edit</a>
-  </td>
-  <td>
     <%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %>
-	</td>
+  </td>
 	<% end %>
 
 	<% if controller_name == 'job' && show_input %>

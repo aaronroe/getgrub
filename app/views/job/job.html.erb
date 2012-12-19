@@ -6,6 +6,7 @@
           <thead>
             <tr>
               <th>Item</th>
+              <th>Tip</th>
               <th>Deliver By</th>
             </tr>
           </thead>
@@ -14,7 +15,7 @@
             <% @requests.each do |request| %>
                 <%= render :partial => 'shared/per_job', :locals => {:request => request, :show_input => true} %>
             <% end %>
-            <tr class="emptyMessage"><td colspan="2">No more available requests!</td></tr>
+            <tr class="emptyMessage"><td colspan="3">No more available requests!</td></tr>
 
           </tbody>
         </table>
@@ -31,6 +32,7 @@
               <thead>
                 <tr>
                   <th>Item</th>
+                  <th>Tip</th>
                   <th>Deliver By</th>
                 </tr>
               </thead>
@@ -40,7 +42,7 @@
                     <%= render :partial => 'shared/per_job', :locals => {:request => job, :show_input => false} %>
                 <% end %>
 
-                <tr class="emptyMessage"><td colspan="2">Drag and drop jobs here to add</td></tr>
+                <tr class="emptyMessage"><td colspan="3">Drag and drop jobs here to add</td></tr>
               </tbody>
             </table>
 
