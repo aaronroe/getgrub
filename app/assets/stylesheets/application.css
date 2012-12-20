@@ -11,4 +11,5 @@
  *= require_self
  *= require jquery.ui.core
  *= require jquery.ui.datepicker
+ *= require custom.css
  */
