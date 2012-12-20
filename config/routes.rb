@@ -15,6 +15,7 @@ GetGrub::Application.routes.draw do
   match "/users/job" => "job#job"
   match "/profile" => "profile#profile"
   match "/profile/balance" => "profile#balance"
+  match "/profile/update" => "profile#update"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
