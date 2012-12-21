@@ -1,0 +1,17 @@
+<div style="font-weight:bold">Current Phone Number:</div>
+
+<%= current_user.phone_number %>
+
+<br />
+<br />
+
+<%= form_for @user, :url =>  {:action => "update_phone_number"} do |f| %>
+
+  <%= f.label "What is your new phone number?" %>
+  <%= f.text_field :phone_number %><br />
+
+  <%= f.submit 'Add', :class => "btn btn-primary" %>
+
+<% end %>
+
+<%=render :partial => 'shared/feedback'%>
