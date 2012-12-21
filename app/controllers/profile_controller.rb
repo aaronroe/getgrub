@@ -7,11 +7,11 @@ class ProfileController < ApplicationController
 	end
 
   def balance
-    @user = current_user
+    @user = User.new(params[:user])
   end
   
   def phone_number
-    @user = current_user
+    @user = User.new(params[:user])
   end
 
   def update_balance
