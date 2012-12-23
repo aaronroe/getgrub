@@ -5,7 +5,7 @@
 <br />
 <br />
 
-<%= form_for @user, :url =>  {:action => "update_balance"} do |f| %>
+<%= form_for @user, :url =>  {:action => "update_balance"}, :validate => true do |f| %>
 
 	<%= f.label "How much do you wish to add to your account?" %>
 	<%= f.text_field :balance %><br />

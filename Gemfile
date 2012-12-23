@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.7'
 
 gem 'devise'
-
 gem 'bootstrap-sass', '2.0.0'
+gem 'client_side_validations'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

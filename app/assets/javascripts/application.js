@@ -16,3 +16,4 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.sortable
 //= require scrollTo
+//= require rails.validations

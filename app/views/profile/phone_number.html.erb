@@ -5,7 +5,7 @@
 <br />
 <br />
 
-<%= form_for @user, :url =>  {:action => "update_phone_number"} do |f| %>
+<%= form_for @user, :url =>  {:action => "update_phone_number"}, :validate => true do |f| %>
 
   <%= f.label "What is your new phone number?" %>
   <%= f.text_field :phone_number %><br />
