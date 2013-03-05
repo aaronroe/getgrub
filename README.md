@@ -1,6 +1,6 @@
 GetGrub
 =======
-Get Grub is a web application aimed at connecting those going out to grab late-night food, and those staying in, but wanting late-night food.
+Get Grub is a web application aimed at connecting those going out to grab late-night food, and those staying in, but wanting late-night food. It was developed at Platform Houston's inaugural hackathon!
 
 How does Get Grub work?
 -----------------------
